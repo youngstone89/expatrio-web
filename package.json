@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open",
+    "build": "webpack"
   },
   "dependencies": {
     "core-js": "^3.4.4",
@@ -21,7 +21,8 @@
     "vue-loader": "^15.8.3",
     "vue-template-compiler": "^2.6.11",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
   },
   "eslintConfig": {
     "root": true,

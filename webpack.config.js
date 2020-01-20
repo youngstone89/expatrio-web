@@ -3,10 +3,11 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 
 module.exports = {
-    entry: './src/index.js',
-    output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'dist'),
+    mode: 'development',
+    entry: './src/main.js',
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './dist'
     },
     module: {
         rules: [
@@ -33,5 +34,9 @@ module.exports = {
     plugins: [
         // make sure to include the plugin!
         new VueLoaderPlugin()
-    ]
+    ],
+    output: {
+        filename: 'main.js',
+        path: path.resolve(__dirname, 'dist'),
+    },
 };
