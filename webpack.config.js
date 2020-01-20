@@ -1,10 +1,14 @@
 const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 
 module.exports = {
     mode: 'development',
-    entry: './src/main.js',
+    entry: {
+        app: './src/main.js'
+    },
     devtool: 'inline-source-map',
     devServer: {
         contentBase: './dist'
@@ -33,10 +37,15 @@ module.exports = {
     },
     plugins: [
         // make sure to include the plugin!
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            title: 'Expatrio Web Portal',
+            template: './src/index.html'
+        })
     ],
     output: {
-        filename: 'main.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
     },
 };
