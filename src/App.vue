@@ -4,14 +4,12 @@
       <a href="#" class="navbar-brand">Expatrio</a>
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link to="/home"><font-awesome-icon icon="home" /> Home</router-link>
+          <router-link to="/home" class="nav-link"><font-awesome-icon icon="home" /> Home</router-link>
         </li>
         <li class="nav-item" v-if="showAdminBoard">
-            <router-link to="/admin" class="nav-link">Admin Board</router-link>
-        </li>
-        <li class="nav-item">
-            <router-link to="/customer" class="nav-link" v-if="currentUser">
-                User
+            <router-link to="/admin" class="nav-link">
+                <font-awesome-icon icon="users" />
+                Manage Customers
             </router-link>
         </li>
       </div>
