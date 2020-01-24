@@ -10,7 +10,9 @@
             <router-link to="/admin" class="nav-link">Admin Board</router-link>
         </li>
         <li class="nav-item">
-          <a href="/customer" class="nav-link" v-if="currentUser">User</a>
+            <router-link to="/customer" class="nav-link" v-if="currentUser">
+                User
+            </router-link>
         </li>
       </div>
 
@@ -35,7 +37,7 @@
             </router-link>
         </li>
         <li class="nav-item">
-          <a href class="nav-link" @click="logOut">
+          <a href class="nav-link" v-on:click.stop.prevent="logOut">
             <font-awesome-icon icon="sign-out-alt" /> LogOut
           </a>
         </li>
@@ -65,7 +67,7 @@
         methods: {
             logOut() {
                 this.$store.dispatch('auth/logout');
-                this.$router.push('/login');
+                this.$router.push('login');
             }
         }
     };
