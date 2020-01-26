@@ -15,10 +15,12 @@ import {
     faUser,
     faUserPlus,
     faSignInAlt,
-    faSignOutAlt
+    faSignOutAlt,
+    faUserEdit,
+    faUserSlash
 } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faHome,faUsers, faUser, faUserPlus, faSignInAlt, faSignOutAlt);
+library.add(faHome,faUsers, faUser, faUserPlus, faSignInAlt, faSignOutAlt, faUserEdit,faUserSlash);
 
 Vue.config.productionTip = false
 

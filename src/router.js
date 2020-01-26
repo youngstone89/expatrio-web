@@ -9,11 +9,11 @@ Vue.use(Router);
 export const router = new Router({
     mode: 'history',
     routes: [
-        {
-            path: '/',
-            name: 'home',
-            component: Home
-        },
+        // {
+        //     path: '/',
+        //     name: 'home',
+        //     component: Home
+        // },
         {
             path: '/home',
             component: Home
@@ -44,6 +44,12 @@ export const router = new Router({
             name: 'customer',
             // lazy-loaded
             component: () => import('./views/BoardCustomer.vue')
+        },
+        {
+            path: '/adduser',
+            name: 'adduser',
+            // lazy-loaded
+            component: () => import('./views/AddUser.vue')
         },
         {
             path: '*',
