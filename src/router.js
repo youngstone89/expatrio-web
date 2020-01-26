@@ -40,16 +40,16 @@ export const router = new Router({
             component: () => import('./views/BoardAdmin.vue')
         },
         {
-            path: '/customer',
-            name: 'customer',
-            // lazy-loaded
-            component: () => import('./views/BoardCustomer.vue')
-        },
-        {
             path: '/adduser',
             name: 'adduser',
             // lazy-loaded
             component: () => import('./views/AddUser.vue')
+        },
+        {
+            path: '/edituser/:customerId',
+            name: 'edituser',
+            // lazy-loaded
+            component: () => import('./views/EditUser.vue')
         },
         {
             path: '*',

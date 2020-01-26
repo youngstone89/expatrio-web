@@ -31,11 +31,13 @@
                     <td>{{customer.username}}</td>
                     <td>{{customer.email}}</td>
                     <td>
+                        <a href="" v-on:click.stop.prevent="editUser(customer)">
                         <font-awesome-icon icon="user-edit" />
+                        </a>
                     </td>
                     <td>
-                        <a href="" v-on:click="deleteUser(customer)">
-                        <font-awesome-icon icon="user-slash" />
+                        <a href="" v-on:click.stop.prevent="deleteUser(customer)">
+                            <font-awesome-icon icon="user-slash" />
                         </a>
                     </td>
                 </tr>
@@ -95,6 +97,9 @@
                     .then(()=>{
                         this.$router.go(0);
                     });
+            },
+            editUser: function(customer){
+                this.$router.push({ name: 'edituser', params: { customerId: customer.id } });
             }
         }
     };

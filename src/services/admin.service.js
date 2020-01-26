@@ -4,6 +4,19 @@ import authHeader from "./auth.header";
 const API_URL = 'http://localhost:8080/api/admin/';
 
 class AdminService {
+    getCustomer(id) {
+        return axios
+            .get(API_URL + 'customer',{
+                params: {
+                    id: id
+                },
+                headers: authHeader()
+            })
+            .then(this.handleResponse)
+            .then(response => {
+                return response.data;
+            });
+    }
     getCustomers() {
         return axios
             .get(API_URL + 'customers',{ headers: authHeader()})
